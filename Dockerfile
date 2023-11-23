@@ -1,7 +1,6 @@
 FROM node:alpine
-
 WORKDIR /var/www/html
-
+COPY ./start.sh /start.sh
 RUN set -ex \
     && apk update \
     && apk add linux-headers openssl-dev pcre2-dev zlib-dev openssl abuild \
@@ -9,6 +8,7 @@ RUN set -ex \
                xz g++ coreutils vim bash bat \
     && rm -rf /tmp/packages \
         && apk add --no-cache tzdata \
-        && apk add --no-cache curl ca-certificates
-
+        && apk add --no-cache curl ca-certificates \
+    && mkdir -p /var/log/supervisor \
+    && chmod +x /start.sh
 CMD ["/start.sh"]
