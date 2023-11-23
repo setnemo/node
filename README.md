@@ -1,5 +1,12 @@
 # Node
 
+Based on node:alpine + supervisor ```/etc/supervisor/conf.d/*.conf```
+
+## Environment
+```dotenv
+RUN_SCRIPTS #/var/www/html/scripts/
+```
+
 ```yaml
 version: '3'
 services:
