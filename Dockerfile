@@ -1,7 +1,7 @@
 FROM node:alpine
-WORKDIR /var/www/html
 COPY conf/supervisord.conf /etc/supervisord.conf
 COPY start.sh /start.sh
+WORKDIR /var/www/html
 RUN set -ex \
     && apk update \
     && apk add linux-headers openssl-dev pcre2-dev zlib-dev openssl abuild \
