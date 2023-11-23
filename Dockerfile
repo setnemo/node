@@ -9,6 +9,7 @@ RUN set -ex \
     && rm -rf /tmp/packages \
         && apk add --no-cache tzdata \
         && apk add --no-cache curl ca-certificates \
+        && apk add --no-cache supervisor \
     && mkdir -p /var/log/supervisor \
     && chmod +x /start.sh
 CMD ["/start.sh"]
