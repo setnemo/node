@@ -11,4 +11,5 @@ RUN set -ex \
         && apk add --no-cache supervisor \
     && mkdir -p /var/log/supervisor \
     && chmod +x /start.sh
+EXPOSE 5173
 CMD ["/start.sh"]
